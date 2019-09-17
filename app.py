@@ -18,42 +18,23 @@ name1 = 'Instagram'
 name2 = 'Facebook'
 name3 = 'Snapchat'
 tabtitle = 'Social Media Apps'
+image1 = 'Social-Media.jpg'
 sourceurl = 'https://www.statista.com/statistics/253577/number-of-monthly-active-instagram-users/'
 githublink = 'https://github.com/ktemsupa/dash-linechart-example'
 
-########### Set up the chart
 
-# create traces
-trace0 = go.Scatter(
-    x = x_values,
-    y = y1_values,
-    mode = 'lines',
-    marker = {'color': color1},
-    name = name1
-)
-trace1 = go.Scatter(
-    x = x_values,
-    y = y2_values,
-    mode = 'lines',
-    marker = {'color': color2},
-    name = name2
-)
-trace2 = go.Scatter(
-    x = x_values,
-    y = y3_values,
-    mode = 'lines',
-    marker = {'color': color3},
-    name = name3
-)
+fig = go.Figure()
+# Create and style traces
+fig.add_trace(go.Scatter(x=x_values, y=y1_values, name= name1,
+                         line=dict(color=color1, width=4)))
+fig.add_trace(go.Scatter(x=x_values, y=y2_values, name = name2,
+                         line=dict(color=color2, width=4, dash='dot')))
+fig.add_trace(go.Scatter(x=x_values, y=y3_values, name= name3,
+                         line=dict(color=color3, width=4,
+                              dash='dash')
+))
 
-# assign traces to data
-data = [trace0, trace1, trace2]
-layout = go.Layout(
-    title = mytitle
-)
 
-# Generate the figure dictionary
-fig = go.Figure(data=data,layout=layout)
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
