@@ -5,21 +5,21 @@ import plotly.graph_objs as go
 
 ########### Define your variables ######
 
-myheading = "Baseball Stats from the 1950s"
-mytitle = "Batting Averages for 3 Hall of Famers"
-x_values = ['1954', '1955', '1956', '1957', '1958', '1959']
-y1_values = [345, 356, 345, 388, 328, 254]
-y2_values = [300, 306, 353, 365, 304, 285]
-y3_values = [280, 314, 328, 322, 326, 355]
-color1 = '#fc9403'
-color2 = '#0307fc'
-color3 = '#9003fc'
-name1 = 'Ted Williams'
-name2 = 'Mickey Mantle'
-name3 = 'Hank Aaron'
-tabtitle = 'baseball'
-sourceurl = 'https://www.baseball-reference.com'
-githublink = 'https://github.com/austinlasseter/dash-linechart-example'
+myheading = "Social Media Usage"
+mytitle = "Number of Active Users - In Millions"
+x_values = ['2013', '2014', '2015', '2016', '2017', '2018']
+y1_values = [150, 300, 400, 600, 800, 1000]
+y2_values = [201, 208, 219, 231, 239, 242]
+y3_values = [50, 71, 107, 158, 187, 187]
+color1 = '#eb4034' 
+color2 = '#4287f5'
+color3 = '#e5eb34'
+name1 = 'Instagram'
+name2 = 'Facebook'
+name3 = 'Snapchat'
+tabtitle = 'Social Media Apps'
+sourceurl = 'https://www.statista.com/statistics/253577/number-of-monthly-active-instagram-users/'
+githublink = 'https://github.com/ktemsupa/dash-linechart-example'
 
 ########### Set up the chart
 
@@ -63,7 +63,10 @@ app.title=tabtitle
 
 ########### Set up the layout
 app.layout = html.Div(children=[
-    html.H1(myheading),
+    html.H2(
+        children=myheading,
+        style={'textAlign':'center'}
+    ),
     dcc.Graph(
         id='figure-1',
         figure=fig
